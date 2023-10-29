@@ -153,6 +153,7 @@ class Modbus {
                 uint16_t andMask;
                 uint16_t orMask;
             };
+            uint8_t* data;
             RequestData(TAddress r1, uint16_t c1) {
                 reg = r1;
                 regCount = c1;
@@ -167,6 +168,9 @@ class Modbus {
                 regMask = r1;
                 andMask = m1;
                 orMask = m2;
+            };
+            RequestData(uint8_t* d) {
+                data = d;
             };
         };
 

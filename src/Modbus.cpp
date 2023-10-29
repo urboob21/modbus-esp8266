@@ -431,7 +431,10 @@ void Modbus::slavePDU(uint8_t* frame) {
         break;
 
         default:
-            exceptionResponse(fcode, EX_ILLEGAL_FUNCTION);
+            ex = _onRequest(fcode, {frame + 1});
+            if (ex != EX_PASSTHROUGH) {
+                exceptionResponse(fcode, EX_ILLEGAL_FUNCTION);
+            }
             return;
     }
 }
