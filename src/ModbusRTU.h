@@ -93,6 +93,7 @@ bool ModbusRTUTemplate::begin(T* port, int16_t txEnablePin, int16_t rxEnablePin,
         pinMode(_rxPin, OUTPUT);
         digitalWrite(_rxPin, _direct?LOW:HIGH);
 	}
+	return true;
 }
 #endif
 class ModbusRTU : public ModbusAPI<ModbusRTUTemplate> {};
