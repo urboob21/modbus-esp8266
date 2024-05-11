@@ -580,7 +580,7 @@ bool Modbus::onGet(TAddress address, cbModbus cb, uint16_t numregs) {
 	TRegister* reg;
 	bool atLeastOne = false;
     if (!cb) {
-        return removeOnGet(address);
+        return removeOnGet(address, nullptr, numregs);
     }
 	while (numregs > 0) {
 		reg = searchRegister(address);
@@ -597,7 +597,7 @@ bool Modbus::onSet(TAddress address, cbModbus cb, uint16_t numregs) {
 	TRegister* reg;
 	bool atLeastOne = false;
     if (!cb) {
-        return removeOnGet(address);
+        return removeOnSet(address, nullptr, numregs);
     }
 	while (numregs > 0) {
 		reg = searchRegister(address);
