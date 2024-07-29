@@ -25,10 +25,8 @@ uint16_t hregs[HREG_COUNT]; // save holding registers value
 ModbusRTU modbus;
 
 // Callback transaction
-bool _cbTransaction(Modbus::ResultCode event, uint16_t transactionId, void *data)
-{ // Callback to monitor errors
-  if (event != Modbus::EX_SUCCESS)
-  {
+bool _cbTransaction(Modbus::ResultCode event, uint16_t transactionId, void* data) { // Callback to monitor errors
+  if (event != Modbus::EX_SUCCESS) {
     Serial.print("Request result: 0x");
     Serial.print(event, HEX);
   }
