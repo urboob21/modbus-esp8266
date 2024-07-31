@@ -1,5 +1,5 @@
 /*
-  ModbusRTU ESP32
+  ModbusRTU ESP32 - Master
   Read/Write from slave device
     R/W   Output Coils      - 1bit
     Read  Input Contacts    - 1bit
